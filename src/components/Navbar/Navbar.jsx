@@ -1,0 +1,75 @@
+import { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
+import { RiMenu3Fill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
+
+import image from './../../assets/image/2bed3446db10b86af56e902479b3a9df-removebg-preview.png'
+
+const Navbar = () => {
+    const [open , setOpen] = useState(false);
+    const [user,setUser] = useState(true)
+
+    return (
+        <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
+          <nav className='container flex items-center justify-between relative px-2'>
+             <div className="flex items-center">
+                <div className='w-10 z-50 md:w-16  lg:w-32'><img src={image} alt="logo" /></div>
+                <h1 className="text-white">AllSet Sports</h1> 
+             </div>
+
+           <div className={` absolute top-11 container px-2 mx-auto flex  justify-center backdrop-blur-sm duration-1000 rounded-md py-4 bg-[#0A1828] bg-opacity-60 lg:static  lg:w-auto lg:mx-0 ${open?'left-0 right-0':'left-[800px]'}`}>
+            <ul className='flex items-center flex-col lg:flex-row gap-2 lg:gap-3 text-white'>
+                <li className='text-lg'><NavLink  to='/' onClick={()=>setOpen(false)}>Home</NavLink></li>
+
+                <li className='text-lg'><NavLink to='/ourService' onClick={()=>setOpen(false)}>Our Services</NavLink></li>
+                <li className='text-lg'><NavLink to='/review' onClick={()=>setOpen(false)}>Review</NavLink></li>
+
+                <li className='text-lg'><NavLink to='/profile' onClick={()=>setOpen(false)}>My Profile</NavLink></li>
+
+                {/* {
+                    user && user?.email?<li className={`w-10 h-10 hidden cursor-pointer  ${user?'md:block':''}`}><img src={user?.photoURL} className='rounded-full h-full w-full' alt="profile"
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={user?.displayName}
+                 />
+                 </li>:''
+                } */}
+
+                <li className='text-lg '>{user?<button onClick={()=>{
+                     setOpen(false),
+                    handleLogout()
+                }}>Log Out</button>:<Link onClick={()=>setOpen(false)} to='/login'>Login</Link>}</li>
+            </ul>
+           </div>
+
+           <div className='flex items-center gap-2 lg:hidden z-50'>
+            {/* <div className={`w-8 h-8 cursor-pointer ${user?'':'hidden'}`}>
+                {
+                    user && user?.email ? <img src={user?.photoURL} className='rounded-full w-full h-full'
+                 data-tooltip-id="my-tooltip1"
+                data-tooltip-content={user?.displayName} alt="" />:''
+                }
+            </div> */}
+            <div className=' cursor-pointer font-bold text-xl text-white' onClick={()=>setOpen(!open)}>
+                {
+                    open === true?<IoCloseOutline />:<RiMenu3Fill />
+                } 
+            </div>
+           </div>
+          </nav>
+
+
+
+             {/* <ReactTooltip place="bottom" type="info" effect="solid"
+             id='my-tooltip'
+             /> 
+             
+             <ReactTooltip place="bottom" type="info" effect="solid"
+             className='bg-[#00ABE4]'
+             id='my-tooltip1'
+             /> */}
+             
+        </div>
+    );
+};
+
+export default Navbar;
