@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import image from './../../assets/image/2bed3446db10b86af56e902479b3a9df-removebg-preview.png'
+import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const [open , setOpen] = useState(false);
-    const [user,setUser] = useState(true)
+    // const [user,setUser] = useState(true);
+    const {user} = useContext(AuthContext);
+    console.log(user);
 
     return (
         <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
@@ -18,13 +21,13 @@ const Navbar = () => {
              </div>
 
            <div className={` absolute top-11 container px-2 mx-auto flex  justify-center backdrop-blur-sm duration-1000 rounded-md py-4 bg-[#0A1828] bg-opacity-60 lg:static  lg:w-auto lg:mx-0 ${open?'left-0 right-0':'left-[800px]'}`}>
-            <ul className='flex items-center flex-col lg:flex-row gap-2 lg:gap-3 text-white'>
+            <ul className='flex items-center flex-col lg:flex-row gap-2 lg:gap-5 text-white'>
                 <li className='text-lg'><NavLink  to='/' onClick={()=>setOpen(false)}>Home</NavLink></li>
 
-                <li className='text-lg'><NavLink to='/ourService' onClick={()=>setOpen(false)}>Our Services</NavLink></li>
-                <li className='text-lg'><NavLink to='/review' onClick={()=>setOpen(false)}>Review</NavLink></li>
+                <li className='text-lg'><NavLink to='/allEquipment' onClick={()=>setOpen(false)}>All Sports Equipment</NavLink></li>
+                <li className='text-lg'><NavLink to='/addEquipment' onClick={()=>setOpen(false)}>Add Equipment</NavLink></li>
 
-                <li className='text-lg'><NavLink to='/profile' onClick={()=>setOpen(false)}>My Profile</NavLink></li>
+                <li className='text-lg'><NavLink to='/myEquipment' onClick={()=>setOpen(false)}>My Equipment List</NavLink></li>
 
                 {/* {
                     user && user?.email?<li className={`w-10 h-10 hidden cursor-pointer  ${user?'md:block':''}`}><img src={user?.photoURL} className='rounded-full h-full w-full' alt="profile"
