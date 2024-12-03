@@ -10,13 +10,12 @@ const Navbar = () => {
     const [open , setOpen] = useState(false);
     // const [user,setUser] = useState(true);
     const {user} = useContext(AuthContext);
-    console.log(user);
-
+   
     return (
         <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
-          <nav className='container flex items-center justify-between relative px-2'>
+          <nav className='container flex items-center justify-between relative'>
              <div className="flex items-center">
-                <div className='w-10 z-50 md:w-16  lg:w-32'><img src={image} alt="logo" /></div>
+                <div className='w-10 z-50 md:w-16  lg:w-32 '><img src={image} alt="logo" /></div>
                 <h1 className="text-white">AllSet Sports</h1> 
              </div>
 
