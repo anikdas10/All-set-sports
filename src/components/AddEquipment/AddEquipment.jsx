@@ -7,6 +7,37 @@ const AddEquipment = () => {
 
     const handleUpdate = e =>{
         e.preventDefault();
+        const form = e.target;
+        console.log(form);
+        const image = form.imageURL.value;
+        const itemName= form.itemName.value;
+        const category= form.category.value;
+        const description= form.description.value;
+        const price= form.price.value;
+        const rating= form.rating.value;
+        const customization= form.customization.value;
+        const stock= form.stock.value;
+        const userName= form.userName.value;
+        const email= form.email.value;
+
+        const equipment = {itemName,category,image,description,price,rating,customization,stock,userName,email};
+        console.log(equipment);
+
+        fetch("http://localhost:5000/equipments",{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(equipment)
+        })
+        .then(data=>{
+            console.log(data);
+
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+
         
     }
     return (
@@ -20,14 +51,18 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Image</span>
                         </div>
-                        <input type="text" placeholder="Enter image URL" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Enter image URL" 
+                        name="imageURL"
+                        className="input input-bordered w-full " />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
                         <div className="label">
                             <span className="label-text">Item Name</span>
                         </div>
-                        <input type="text" placeholder="Enter Item Name" className="input input-bordered w-full " />
+                        <input type="text" 
+                        name="itemName"
+                        placeholder="Enter Item Name" className="input input-bordered w-full " />
  
                     </label>
                     </div>
@@ -36,14 +71,18 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Category Name</span>
                         </div>
-                        <input type="text" placeholder="Enter Category Name" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Enter Category Name" 
+                        name="category"
+                        className="input input-bordered w-full " />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
                         <div className="label">
                             <span className="label-text">Description</span>
                         </div>
-                        <input type="text" placeholder="Description" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Description" 
+                        name="description"
+                        className="input input-bordered w-full " />
  
                     </label>
                     </div>
@@ -52,14 +91,18 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Price</span>
                         </div>
-                        <input type="text" placeholder="Enter Price" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Enter Price" 
+                        name="price"
+                        className="input input-bordered w-full " />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
                         <div className="label">
                             <span className="label-text">Rating</span>
                         </div>
-                        <input type="text" placeholder="Rating" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Rating"
+                        name="rating"
+                        className="input input-bordered w-full " />
  
                     </label>
                     </div>
@@ -68,14 +111,18 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Customization</span>
                         </div>
-                        <input type="text" placeholder="Customization Type" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Customization Type"
+                        name="customization"
+                        className="input input-bordered w-full " />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
                         <div className="label">
                             <span className="label-text">Processing Time</span>
                         </div>
-                        <input type="text" placeholder="Enter Processing/delivery Time" className="input input-bordered w-full " />
+                        <input type="text" placeholder="Enter Processing/delivery Time" 
+                        name="delivery"
+                        className="input input-bordered w-full " />
  
                     </label>
                     </div>
@@ -84,7 +131,9 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Stock Status</span>
                         </div>
-                        <input type="text" placeholder="available product quantity" className="input input-bordered w-full " />
+                        <input type="text" placeholder="available product quantity" 
+                        name="stock"
+                        className="input input-bordered w-full " />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -92,6 +141,7 @@ const AddEquipment = () => {
                             <span className="label-text">User Email</span>
                         </div>
                         <input type="text" placeholder="Enter Processing/delivery Time" 
+                        name="email"
                         value={user?.email}
                         className="input input-bordered w-full " />
  
@@ -103,6 +153,7 @@ const AddEquipment = () => {
                             <span className="label-text">User Name</span>
                         </div>
                         <input type="text" placeholder="available product quantity" 
+                        name="userName"
                         value={user?.displayName}
                         className="input input-bordered w-full " />
  
