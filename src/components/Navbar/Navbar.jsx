@@ -5,12 +5,26 @@ import { Link, NavLink } from "react-router-dom";
 
 import image from './../../assets/image/2bed3446db10b86af56e902479b3a9df-removebg-preview.png'
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
+import { signOut } from "firebase/auth";
+import { auth } from "../../assets/firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const [open , setOpen] = useState(false);
-    // const [user,setUser] = useState(true);
+    
     const {user} = useContext(AuthContext);
-   
+
+    const handleLogout = () =>{
+        signOut(auth)
+        .then(()=>{
+            Swal.fire({
+                title: "Log out Successful",
+                icon: "success",
+                confirmButtonText: "Close" 
+             })
+        })
+    }
+   console.log(user);
     return (
         <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
           <nav className='container flex items-center justify-between relative'>

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
     const {user} = useContext(AuthContext);
@@ -32,6 +33,11 @@ const AddEquipment = () => {
         })
         .then(data=>{
             console.log(data);
+            Swal.fire({
+             title: "The Equipment Added Successfully",
+            icon: "success",
+            confirmButtonText: "Close"
+});
 
         })
         .catch(err=>{
