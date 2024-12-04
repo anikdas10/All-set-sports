@@ -4,11 +4,33 @@ import { Link } from "react-router-dom";
 import { auth } from "../../assets/firebase/firebase.config";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Login = () => {
+
+  const [error,setError] = useState('');
+
     const [toggle,setToggle] = useState(false);
-    const {loginUserWithGoogle,setUser} = useContext(AuthContext);
+    const {loginUserWithGoogle,loginUser,setUser} = useContext(AuthContext);
     const handleSubmit = e =>{
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+
+      setError('');
+
+      loginUser(email,password)
+      .then(result=>{
+        console.log(result.user);
+        setUser(result.user);
+        Swal.fire({
+                title: "Login Successful",
+                icon: "success",
+                confirmButtonText: "Close" 
+             })
+      })
+      .catch(()=>setError("Invalid email or password!"))
 
     }
 
@@ -18,6 +40,11 @@ const Login = () => {
       .then(result=>{
         console.log(result.user);
         setUser(result.user);
+        Swal.fire({
+                title: "Login Successful",
+                icon: "success",
+                confirmButtonText: "Close" 
+             })
       })
       .catch(err=>{
         console.log(err.message);
@@ -25,7 +52,7 @@ const Login = () => {
     }
 
     return (
-        <div className="mt-24 md:mt-32">
+        <div className="mt-16 lg:mt-32">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Login</h2>
 
             <div className="md:max-w-2xl mx-auto border-2 rounded-md mt-4 shadow-md">

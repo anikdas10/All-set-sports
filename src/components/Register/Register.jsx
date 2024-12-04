@@ -46,16 +46,21 @@ const Register = () => {
         createUser(email,password)
         .then(result=>
             {
-                const user = result.user;
-                console.log(user);
-                setUser(user);
                 updateUserProfile({displayName:name,photoURL:photo})
-                .then((result)=>{
+                .then(()=>{
                     //  navigate(location?.state?location?.state:'/');
-                    console.log(result);
+                    // console.log(result);
                 })
-                .catch(err=>console.log(err))
-                
+                .catch(err=>console.log(err));
+
+                const user = result.user;
+                setUser(user);
+                console.log(user);
+                Swal.fire({
+                title: "Register Successful",
+                icon: "success",
+                confirmButtonText: "Close" 
+             })
             })
 
         .catch(err=>console.log(err));
@@ -80,7 +85,7 @@ const Register = () => {
     return (
        <div className=" min-h-[90vh]">
 
-        <div className="min-h-[500px] flex items-center justify-center py-24">
+        <div className="min-h-[500px] flex items-center justify-center py-10 lg:py-20">
        
           <div className="card bg-base-100 w-full max-w-xl border md:mt-12 shrink-0 shadow-md">
              <div className="text-center font-bold text-xl p-4">

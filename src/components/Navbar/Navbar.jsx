@@ -8,7 +8,7 @@ import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { signOut } from "firebase/auth";
 import { auth } from "../../assets/firebase/firebase.config";
 import Swal from "sweetalert2";
-
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 const Navbar = () => {
     const [open , setOpen] = useState(false);
     
@@ -42,13 +42,13 @@ const Navbar = () => {
 
                 <li className='text-lg'><NavLink to='/myEquipment' onClick={()=>setOpen(false)}>My Equipment List</NavLink></li>
 
-                {/* {
-                    user && user?.email?<li className={`w-10 h-10 hidden cursor-pointer  ${user?'md:block':''}`}><img src={user?.photoURL} className='rounded-full h-full w-full' alt="profile"
+                {
+                    user && user?.email?<li className={`w-10 h-10 hidden cursor-pointer  ${user?'lg:block':''}`}><img src={user?.photoURL} className='rounded-full h-full w-full' alt="profile"
                 data-tooltip-id="my-tooltip"
                 data-tooltip-content={user?.displayName}
                  />
                  </li>:''
-                } */}
+                }
 
                 <li className='text-lg '>{user?<button onClick={()=>{
                      setOpen(false),
@@ -58,13 +58,13 @@ const Navbar = () => {
            </div>
 
            <div className='flex items-center gap-2 lg:hidden z-50'>
-            {/* <div className={`w-8 h-8 cursor-pointer ${user?'':'hidden'}`}>
+            <div className={`w-8 h-8 cursor-pointer ${user?'':'hidden'}`}>
                 {
                     user && user?.email ? <img src={user?.photoURL} className='rounded-full w-full h-full'
                  data-tooltip-id="my-tooltip1"
                 data-tooltip-content={user?.displayName} alt="" />:''
                 }
-            </div> */}
+            </div>
             <div className=' cursor-pointer font-bold text-xl text-white' onClick={()=>setOpen(!open)}>
                 {
                     open === true?<IoCloseOutline />:<RiMenu3Fill />
@@ -75,14 +75,14 @@ const Navbar = () => {
 
 
 
-             {/* <ReactTooltip place="bottom" type="info" effect="solid"
+             <ReactTooltip place="bottom" type="info" effect="solid"
              id='my-tooltip'
              /> 
              
              <ReactTooltip place="bottom" type="info" effect="solid"
              className='bg-[#00ABE4]'
              id='my-tooltip1'
-             /> */}
+             />
              
         </div>
     );

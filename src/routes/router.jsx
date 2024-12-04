@@ -6,6 +6,7 @@ import MyEquipment from "../components/MyEquipment/MyEquipment";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoutes from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -23,11 +24,15 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addEquipment',
-                element:<AddEquipment/>
+                element:<PrivateRoutes>
+                    <AddEquipment/>
+                    </PrivateRoutes>
             },
             {
                path:'/myEquipment',
-               element:<MyEquipment/>
+               element:<PrivateRoutes>
+                <MyEquipment/>
+               </PrivateRoutes>
             },
             {
                 path:'/login',
