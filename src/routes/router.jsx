@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoutes from "./PrivateRoute";
+import UpdateEquipment from "../components/UpdateEquipment/UpdateEquipment";
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register/>
+            },
+            {
+                path:'/update/:id',
+                element:<UpdateEquipment/>,
+                loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
             }
         ]
     }

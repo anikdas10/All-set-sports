@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { GiEvilWings } from "react-icons/gi";
 import { CiEdit } from "react-icons/ci";
@@ -70,7 +70,7 @@ const MyEquipment = () => {
                                </div>
                             </div>
                             <div className="flex flex-col gap-4">
-                                <button className="text-xs md:text-sm lg:text-xl bg-[#178582] text-white px-2 py-1 rounded-lg flex items-center">Update<CiEdit/></button>
+                                <Link to={`/update/${equipment._id}`} className="text-xs md:text-sm lg:text-xl bg-[#178582] text-white px-2 py-1 rounded-lg flex items-center">Update<CiEdit/></Link>
                                 <button onClick={()=>handleDelete(equipment._id)} className="text-xs md:text-sm lg:text-xl bg-[#178582] text-white rounded-lg py-1 flex items-center px-2">Delete<MdDeleteForever/></button>
                             </div>
                         </div>
