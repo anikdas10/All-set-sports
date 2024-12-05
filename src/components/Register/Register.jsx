@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { GoogleAuthProvider } from "firebase/auth";
 
@@ -10,7 +10,8 @@ const Register = () => {
     const [toggle,setToggle] = useState(true);
     const [err,setErr] = useState('');
     const {createUser,setUser,updateUserProfile,loginUserWithGoogle} = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleRegister = e =>{
         e.preventDefault();
         const form = e.target;
@@ -48,8 +49,7 @@ const Register = () => {
             {
                 updateUserProfile({displayName:name,photoURL:photo})
                 .then(()=>{
-                    //  navigate(location?.state?location?.state:'/');
-                    // console.log(result);
+                     navigate(location?.state?location?.state:'/');
                 })
                 .catch(err=>console.log(err));
 
@@ -72,7 +72,7 @@ const Register = () => {
       loginUserWithGoogle(provider)
       .then(result=>{
         setUser(result.user);
-        //  navigate(location?.state?location?.state:'/');
+         navigate(location?.state?location?.state:'/');
           Swal.fire({
                 title: "Login Successful",
                 icon: "success",

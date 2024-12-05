@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../assets/firebase/firebase.config";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -12,6 +12,10 @@ const Login = () => {
 
     const [toggle,setToggle] = useState(false);
     const {loginUserWithGoogle,loginUser,setUser} = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location.state);
     const handleSubmit = e =>{
       e.preventDefault();
       const form = e.target;
@@ -22,8 +26,8 @@ const Login = () => {
 
       loginUser(email,password)
       .then(result=>{
-        console.log(result.user);
         setUser(result.user);
+        navigate(location?.state?location?.state:"/");
         Swal.fire({
                 title: "Login Successful",
                 icon: "success",
@@ -38,8 +42,8 @@ const Login = () => {
       const provider = new GoogleAuthProvider();
       loginUserWithGoogle(provider)
       .then(result=>{
-        console.log(result.user);
         setUser(result.user);
+         navigate(location?.state?location?.state:"/");
         Swal.fire({
                 title: "Login Successful",
                 icon: "success",
@@ -79,7 +83,9 @@ const Login = () => {
           </div>
 
         </div>
-       
+       <div className="form-control">
+           <p className="text-red-600">{error}</p>
+       </div>
         <div className="form-control mt-6">
           <button className="btn bg-[#178582] text-white">Login</button>
           

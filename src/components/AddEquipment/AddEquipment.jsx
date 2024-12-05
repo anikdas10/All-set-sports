@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 
 const AddEquipment = () => {
     const {user} = useContext(AuthContext);
-    console.log(user);
 
     const handleUpdate = e =>{
         e.preventDefault();
@@ -23,7 +22,6 @@ const AddEquipment = () => {
         const email= form.email.value;
 
         const equipment = {itemName,category,image,description,price,rating,customization,stock,delivery,userName,email};
-        console.log(equipment);
 
         fetch("http://localhost:5000/equipments",{
             method:'POST',
@@ -148,6 +146,7 @@ const AddEquipment = () => {
                         <input type="text" placeholder="Enter Processing/delivery Time" 
                         name="email"
                         value={user?.email}
+                        readOnly
                         className="input input-bordered w-full " />
  
                     </label>
@@ -160,6 +159,7 @@ const AddEquipment = () => {
                         <input type="text" placeholder="available product quantity" 
                         name="userName"
                         value={user?.displayName}
+                        readOnly
                         className="input input-bordered w-full " />
  
                     </label>

@@ -161,6 +161,7 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Enter Processing/delivery Time" 
                         name="email"
                         value={email}
+                        readOnly
                         className="input input-bordered w-full " />
  
                     </label>
@@ -173,6 +174,7 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="available product quantity" 
                         name="userName"
                         value={userName}
+                        readOnly
                         className="input input-bordered w-full " />
  
                     </label>
