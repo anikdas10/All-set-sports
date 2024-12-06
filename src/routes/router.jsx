@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoute";
 import UpdateEquipment from "../components/UpdateEquipment/UpdateEquipment";
 import Details from "../components/Details/Details";
 import Error from "../components/ErrorPage/Error";
+import CategoryItem from "../components/CategoryItem/CategoryItem";
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
                     <Details/>
                 </PrivateRoutes>,
                 loader:({params})=>fetch(`http://localhost:5000/equipments/${params.id}`)
+            },
+            {
+                path:'/category/:category',
+                element:<CategoryItem/>,
+                loader:()=>fetch("http://localhost:5000/equipments")
             }
         ]
     }
