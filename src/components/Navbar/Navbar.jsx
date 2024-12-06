@@ -3,7 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 
-import image from './../../assets/image/2bed3446db10b86af56e902479b3a9df-removebg-preview.png'
+import image from './../../assets/image/sports-logo_1090712-116-removebg-preview.png'
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { signOut } from "firebase/auth";
 import { auth } from "../../assets/firebase/firebase.config";
@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
           <nav className='container flex items-center justify-between relative'>
              <div className="flex items-center">
-                <div className='w-10 z-50 md:w-16  lg:w-32 '><img src={image} alt="logo" /></div>
+                <div className='w-10 z-50 md:w-12  lg:w-16 '><img src={image} alt="logo" /></div>
                 <h1 className="text-white">AllSet Sports</h1> 
              </div>
 

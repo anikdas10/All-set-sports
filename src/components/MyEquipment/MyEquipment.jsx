@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
-import { GiEvilWings } from "react-icons/gi";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
@@ -52,8 +51,6 @@ const MyEquipment = () => {
     return (
         <div className="container mt-16 lg:mt-40">
             <h2 className="text-xl font-bold md:text-2xl lg:text-4xl">My Equipment</h2>
-           <Fade >
-           </Fade>
             <div className="mt-8">
                 {
                     equipments.map(equipment=><div key={equipment._id}>
