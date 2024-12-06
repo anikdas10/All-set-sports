@@ -49,7 +49,7 @@ const MyEquipment = () => {
     }
 
     return (
-        <div className="container mt-16 lg:mt-40">
+        <div className="container mt-20 lg:mt-36 mb-16">
             <h2 className="text-xl font-bold md:text-2xl lg:text-4xl">My Equipment</h2>
             <div className="mt-8">
                 {

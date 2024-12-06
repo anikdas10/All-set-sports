@@ -44,8 +44,8 @@ const AddEquipment = () => {
     }
     
     return (
-        <div className="container mt-12 lg:mt-32">
-            <h2 className="mx-auto font-bold text-3xl">Add Equipment</h2>
+        <div className="container mt-16 md:mt-20 lg:mt-32 mb-16">
+            <h2 className="text-center font-bold text-3xl">Add Equipment</h2>
             {/* form */}
             <div className="md:max-w-3xl mx-auto border p-4 rounded-lg mt-8 shadow-slate-300 shadow-md">
                 <form onSubmit={handleUpdate}>
