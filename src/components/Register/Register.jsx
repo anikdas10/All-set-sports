@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { GoogleAuthProvider } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -84,7 +85,9 @@ const Register = () => {
 
     return (
        <div className=" min-h-[90vh]">
-
+        <Helmet>
+                <title>Register | AllSet Sports</title>
+            </Helmet>
         <div className="min-h-[500px] flex items-center justify-center py-10 lg:py-20">
        
           <div className="card bg-base-100 w-full max-w-xl border md:mt-12 shrink-0 shadow-md">

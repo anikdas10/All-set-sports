@@ -5,6 +5,7 @@ import { auth } from "../../assets/firebase/firebase.config";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -56,8 +57,11 @@ const Login = () => {
     }
 
     return (
-        <div className="mt-16 lg:mt-32">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Login</h2>
+        <div className="mt-16 lg:mt-32 container">
+          <Helmet>
+                <title>Login | AllSet Sports</title>
+            </Helmet>
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center">Login</h2>
 
             <div className="md:max-w-2xl mx-auto border-2 rounded-md mt-4 shadow-md">
                 <form className="card-body" onSubmit={handleSubmit}>

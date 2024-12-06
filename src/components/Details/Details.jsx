@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -6,6 +7,9 @@ const Details = () => {
     const loadedEquipment = useLoaderData();
    return (
         <div className="container mt-16 lg:mt-32 mb-16">
+            <Helmet>
+                <title>Details | AllSet Sports</title>
+            </Helmet>
             <h2 className="text-center font-bold text-lg md:text-xl lg:text-2xl">Details</h2>
 
             <div className="max-w-3xl mx-auto border rounded-lg shadow-lg p-6 bg-white mt-5">

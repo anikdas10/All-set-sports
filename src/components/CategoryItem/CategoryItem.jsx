@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import SingleItem from "../SingleItem/SingleItem";
+import { Helmet } from "react-helmet-async";
 
 
 const CategoryItem = () => {
@@ -14,6 +15,9 @@ const CategoryItem = () => {
     },[])
     return (
         <div className="mt-16 md:mt-20 lg:mt-32 container">
+            <Helmet>
+                <title>{category.category} | AllSet Sports</title>
+            </Helmet>
             <h2 className="font-bold text-lg md:text-xl lg:text-2xl">
                 {category.category}</h2>
 

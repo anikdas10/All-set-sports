@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -12,6 +13,9 @@ const AllEquipment = () => {
     }
     return (
         <div className="container mt-20 lg:mt-32 mb-16">
+            <Helmet>
+                <title>All | AllSet Sports</title>
+            </Helmet>
             <h2 className="font-bold text-lg md:text-xl lg:text-2xl">Sort By: <button onClick={handleSort} className="bg-[#178582] px-3 py-1 text-white rounded-md">Price</button></h2>
 
         <table className="table-auto w-full rounded-lg shadow-lg overflow-hidden mt-5">

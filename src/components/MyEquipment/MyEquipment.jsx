@@ -5,6 +5,7 @@ import { CiEdit } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 
 
 const MyEquipment = () => {
@@ -50,6 +51,9 @@ const MyEquipment = () => {
 
     return (
         <div className="container mt-20 lg:mt-36 mb-16">
+            <Helmet>
+                <title>My Equipments | AllSet Sports</title>
+            </Helmet>
             <h2 className="text-xl font-bold md:text-2xl lg:text-4xl">My Equipment</h2>
             <div className="mt-8">
                 {

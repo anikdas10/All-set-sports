@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddEquipment = () => {
     const {user} = useContext(AuthContext);
@@ -45,6 +46,9 @@ const AddEquipment = () => {
     
     return (
         <div className="container mt-16 md:mt-20 lg:mt-32 mb-16">
+            <Helmet>
+                <title>Add | AllSet Sports</title>
+            </Helmet>
             <h2 className="text-center font-bold text-3xl">Add Equipment</h2>
             {/* form */}
             <div className="md:max-w-3xl mx-auto border p-4 rounded-lg mt-8 shadow-slate-300 shadow-md">
@@ -56,7 +60,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Enter image URL" 
                         name="imageURL"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -65,7 +70,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" 
                         name="itemName"
-                        placeholder="Enter Item Name" className="input input-bordered w-full " />
+                        placeholder="Enter Item Name" className="input input-bordered w-full "
+                        required />
  
                     </label>
                     </div>
@@ -76,7 +82,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Enter Category Name" 
                         name="category"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -85,7 +92,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Description" 
                         name="description"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     </div>
@@ -96,7 +104,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="number" placeholder="Enter Price" 
                         name="price"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -105,7 +114,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Rating"
                         name="rating"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     </div>
@@ -116,7 +126,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Customization Type"
                         name="customization"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -125,7 +136,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="Enter Processing/delivery Time" 
                         name="delivery"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     </div>
@@ -136,7 +148,8 @@ const AddEquipment = () => {
                         </div>
                         <input type="text" placeholder="available product quantity" 
                         name="stock"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     <label className="form-control w-full max-w-lg">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -49,7 +50,10 @@ const UpdateEquipment = () => {
 
     }
     return (
-        <div className="container mt-12 lg:mt-32">
+        <div className="container mt-16 md:mt-20 lg:mt-32 mb-10">
+            <Helmet>
+                <title>Update | AllSet Sports</title>
+            </Helmet>
             <h2 className="mx-auto font-bold text-3xl text-center">Update Equipment</h2>
             {/* form */}
             <div className="md:max-w-3xl mx-auto border p-4 rounded-lg mt-8 shadow-slate-300 shadow-md">
@@ -62,7 +66,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Enter image URL" 
                         name="imageURL"
                         defaultValue={image}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -73,7 +78,8 @@ const UpdateEquipment = () => {
                         name="itemName"
                         placeholder="Enter Item Name" 
                         defaultValue={itemName}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     </div>
@@ -85,7 +91,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Enter Category Name" 
                         name="category"
                         defaultValue={category}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -95,7 +102,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Description" 
                         name="description"
                         defaultValue={description}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     </div>
@@ -107,7 +115,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Enter Price" 
                         name="price"
                         defaultValue={price}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -117,7 +126,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Rating"
                         name="rating"
                         defaultValue={rating}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     </div>
@@ -129,7 +139,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Customization Type"
                         defaultValue={customization}
                         name="customization"
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     <label className="form-control w-full max-w-lg">
@@ -139,7 +150,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="Enter Processing/delivery Time" 
                         name="delivery"
                         defaultValue={delivery}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full " 
+                        required/>
  
                     </label>
                     </div>
@@ -151,7 +163,8 @@ const UpdateEquipment = () => {
                         <input type="text" placeholder="available product quantity" 
                         name="stock"
                         defaultValue={stock}
-                        className="input input-bordered w-full " />
+                        className="input input-bordered w-full "
+                        required />
  
                     </label>
                     <label className="form-control w-full max-w-lg">
