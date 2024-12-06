@@ -5,6 +5,7 @@ import { GiEvilWings } from "react-icons/gi";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 
 const MyEquipment = () => {
@@ -51,11 +52,13 @@ const MyEquipment = () => {
     return (
         <div className="container mt-16 lg:mt-40">
             <h2 className="text-xl font-bold md:text-2xl lg:text-4xl">My Equipment</h2>
-
+           <Fade >
+           </Fade>
             <div className="mt-8">
                 {
                     equipments.map(equipment=><div key={equipment._id}>
-                        <div className="mt-4 border p-2 md:p-4 flex justify-between gap-4 rounded-lg shadow-md items-center pr-6 overflow-hidden">
+                        <Fade direction="up" delay={700}>
+                            <div className="mt-4 border p-2 md:p-4 flex justify-between gap-4 rounded-lg shadow-md items-center pr-6 overflow-hidden">
                             <div className="flex gap-2  w-4/5 items-center">
                                <div className="w-24 md:w-40 lg:w-64">
                                 <img src={equipment.image} alt="" />
@@ -74,6 +77,7 @@ const MyEquipment = () => {
                                 <button onClick={()=>handleDelete(equipment._id)} className="text-xs md:text-sm lg:text-xl bg-[#178582] text-white rounded-lg py-1 flex items-center px-2">Delete<MdDeleteForever/></button>
                             </div>
                         </div>
+                        </Fade>
                     </div>)
                 }
             </div>
