@@ -42,7 +42,7 @@ const Navbar = () => {
                 <li className='text-lg'><NavLink to='/addEquipment' onClick={()=>setOpen(false)}>Add Equipment</NavLink></li>
 
                 <li className='text-lg'><NavLink to='/myEquipment' onClick={()=>setOpen(false)}>My Equipment List</NavLink></li>
-                <li onClick={toggleTheme} className="text-3xl cursor-pointer">
+                <li onClick={toggleTheme} className="text-3xl cursor-pointer hidden lg:block">
                    {theme?<CiDark />:<CiLight />} 
                 </li>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
            </div>
 
            <div className='flex items-center gap-2 lg:hidden z-50'>
-            <div onClick={toggleTheme} className="text-xl md:text-2xl cursor-pointer font-bold text-white">
+            <div onClick={toggleTheme} className="text-xl md:text-2xl cursor-pointer font-bold text-white lg:hidden">
               {theme?<CiDark />:<CiLight />}  
             </div>
             <div className={`w-8 h-8 cursor-pointer ${user?'':'hidden'}`}>

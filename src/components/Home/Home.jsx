@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
+import Products from "../Navbar/Product/Products";
 
 
 const Home = () => {
@@ -12,6 +13,9 @@ const Home = () => {
             <Banner/>
             <section className="mt-8">
                 <Category/>
+            </section>
+            <section>
+                <Products/>
             </section>
         </div>
        </div>
