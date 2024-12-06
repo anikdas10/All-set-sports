@@ -5,6 +5,7 @@ import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import Products from "../Navbar/Product/Products";
 import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
+import Brand from "../BrandPartner/Brand";
 
 
 const Home = () => {
@@ -23,6 +24,9 @@ const Home = () => {
             </section>
             <section>
                 <Products/>
+            </section>
+            <section>
+                <Brand/>
             </section>
         </div>
        </div>
