@@ -6,7 +6,12 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
     const [ user,setUser] = useState(null)
     const [loading,setLoading] = useState(true);
+    const [theme,setTheme] = useState(true);
 
+    const toggleTheme = () =>{
+        setTheme(!theme)
+    }
+    console.log(theme);
     const createUser = (email,password)=>{
         setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
@@ -43,7 +48,9 @@ const AuthProvider = ({children}) => {
         createUser,
         updateUserProfile,
         loginUser,
-        loading
+        loading,
+        theme,
+        toggleTheme
     }
     return (
         <AuthContext.Provider value={authInfo}>

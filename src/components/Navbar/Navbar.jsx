@@ -9,11 +9,12 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../assets/firebase/firebase.config";
 import Swal from "sweetalert2";
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import { CiDark, CiLight } from "react-icons/ci";
 const Navbar = () => {
     const [open , setOpen] = useState(false);
     
-    const {user} = useContext(AuthContext);
-
+    const {user,theme,toggleTheme} = useContext(AuthContext);
+    console.log(theme);
     const handleLogout = () =>{
         signOut(auth)
         .then(()=>{
@@ -26,7 +27,7 @@ const Navbar = () => {
     }
    console.log(user);
     return (
-        <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2'>
+        <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2 border-b'>
           <nav className='container flex items-center justify-between relative'>
              <div className="flex items-center">
                 <div className='w-10 z-50 md:w-12  lg:w-16 '><img src={image} alt="logo" /></div>
@@ -41,6 +42,9 @@ const Navbar = () => {
                 <li className='text-lg'><NavLink to='/addEquipment' onClick={()=>setOpen(false)}>Add Equipment</NavLink></li>
 
                 <li className='text-lg'><NavLink to='/myEquipment' onClick={()=>setOpen(false)}>My Equipment List</NavLink></li>
+                <li onClick={toggleTheme} className="text-3xl cursor-pointer">
+                   {theme?<CiDark />:<CiLight />} 
+                </li>
 
                 {
                     user && user?.email?<li className={`w-10 h-10 hidden cursor-pointer  ${user?'lg:block':''}`}><img src={user?.photoURL} className='rounded-full h-full w-full' alt="profile"
@@ -58,6 +62,9 @@ const Navbar = () => {
            </div>
 
            <div className='flex items-center gap-2 lg:hidden z-50'>
+            <div onClick={toggleTheme} className="text-xl md:text-2xl cursor-pointer font-bold text-white">
+              {theme?<CiDark />:<CiLight />}  
+            </div>
             <div className={`w-8 h-8 cursor-pointer ${user?'':'hidden'}`}>
                 {
                     user && user?.email ? <img src={user?.photoURL} className='rounded-full w-full h-full'

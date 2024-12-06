@@ -12,7 +12,6 @@ import Details from "../components/Details/Details";
 import Error from "../components/ErrorPage/Error";
 import CategoryItem from "../components/CategoryItem/CategoryItem";
 
-
 const router = createBrowserRouter([
     {
         path:'/',
