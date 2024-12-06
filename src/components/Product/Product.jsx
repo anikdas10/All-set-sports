@@ -1,9 +1,11 @@
+import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const Product = ({equipment}) => {
     const {image,itemName,description,price,_id} = equipment;
     return (
-        <div className="border flex flex-col items-center justify-center p-4 rounded-md shadow-md">
+        <Fade direction="up" delay={500}>
+            <div className="border flex flex-col items-center justify-center p-4 rounded-md shadow-md">
            <div className="h-40 md:h-48 w-full lg:h-60">
             <img src={image} className="h-full w-full rounded-md" alt="" />
             </div> 
@@ -20,7 +22,7 @@ const Product = ({equipment}) => {
                </p>
             </div>
         </div>
+        </Fade>
     );
 };
-
 export default Product;

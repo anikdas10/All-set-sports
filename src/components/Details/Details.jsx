@@ -5,15 +5,17 @@ const Details = () => {
     const loadedEquipment = useLoaderData();
     console.log(loadedEquipment);
     return (
-        <div className="container mt-16 lg:mt-32">
+        <div className="container mt-16 lg:mt-32 mb-16">
             <h2 className="text-center font-bold text-lg md:text-xl lg:text-2xl">Details</h2>
 
             <div className="max-w-3xl mx-auto border rounded-lg shadow-lg p-6 bg-white mt-5">
-    <img
+    <div className="h-40 md:h-52 w-full lg:h-[300px]">
+        <img
       src={loadedEquipment.image}
       alt={loadedEquipment.item_name}
-      className="rounded-t-lg w-full  object-cover "
+      className="rounded-t-lg w-full h-full"
     />
+    </div>
     <h3 className="text-xl font-bold mt-4">{loadedEquipment.itemName}</h3>
     <p className="text-gray-500 text-sm mt-1 md:text-lg">
       <strong>Category:</strong> {loadedEquipment.category}

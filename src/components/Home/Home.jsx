@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import { AuthContext } from "../../assets/AuthProvider/AuthProvider";
 import Products from "../Navbar/Product/Products";
+import { Fade } from "react-awesome-reveal";
 
 
 const Home = () => {
@@ -12,7 +13,9 @@ const Home = () => {
          <div className='container pt-16 md:pt-20 lg:pt-36 pb-12 md:pb-16 lg:pb-24'>
             <Banner/>
             <section className="mt-8">
-                <Category/>
+                <Fade direction="up" delay={1000}>
+                    <Category/>
+                </Fade>
             </section>
             <section>
                 <Products/>

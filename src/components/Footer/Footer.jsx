@@ -1,9 +1,11 @@
 import { FaFacebook, FaInstagramSquare, FaYoutube } from 'react-icons/fa';
 import image from './../../assets/image/sports-logo_1090712-116-removebg-preview.png'
 import { CiTwitter } from 'react-icons/ci';
+import { Fade } from 'react-awesome-reveal';
 const Footer = () => {
     return (
-       <div className='bg-[#0A1828] border-t border-gray-400'>
+       <Fade direction='up' delay={100}>
+        <div className='bg-[#0A1828] border-t border-gray-400'>
          <div className='container grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-6 gap-4'>
             <div className='w-24 md:w-32 lg:w-40 mx-auto md:col-span-2 lg:col-span-3'>
                 <img src={image} className='w-full' alt="" />
@@ -44,6 +46,7 @@ const Footer = () => {
                 <h1 className='text-center text-sm md:text-lg w-2/3 mx-auto md:w-auto'>Copyright {new Date().getFullYear()} © All Rights Reserved by AllSet Sports</h1>
             </div>
         </div>
+       </Fade>
     );
 };
 
