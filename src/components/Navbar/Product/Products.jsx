@@ -5,12 +5,12 @@ const Products = () => {
     const [products,setProducts] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/equipments/limited')
+        fetch('https://all-set-sports-server.vercel.app/equipments/limited')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
 
-    console.log(products);
+    
     return (
         <div className="my-16 lg:my-20">
            <h2 className="text-center font-bold text-xl md:text-2xl lg:text-3xl">Products</h2> 

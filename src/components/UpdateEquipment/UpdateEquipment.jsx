@@ -25,7 +25,7 @@ const UpdateEquipment = () => {
         const equipment = {itemName,category,image,description,price,rating,customization,stock,userName,email,delivery};
         console.log(equipment);
 
-        fetch(`http://localhost:5000/equipments/${_id}`,{
+        fetch(`https://all-set-sports-server.vercel.app/equipments/${_id}`,{
 
          method: 'PUT' ,
         headers:{

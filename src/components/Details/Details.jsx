@@ -2,9 +2,9 @@ import { useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
+
     const loadedEquipment = useLoaderData();
-    console.log(loadedEquipment);
-    return (
+   return (
         <div className="container mt-16 lg:mt-32 mb-16">
             <h2 className="text-center font-bold text-lg md:text-xl lg:text-2xl">Details</h2>
 

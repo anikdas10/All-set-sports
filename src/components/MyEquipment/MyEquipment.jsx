@@ -16,7 +16,7 @@ const MyEquipment = () => {
         setEquipments(myEquipment);
     },[])
     const {user} = useContext(AuthContext);
-    console.log(equipments);
+   
 
     const handleDelete = id =>{
         console.log(id);
@@ -31,7 +31,7 @@ const MyEquipment = () => {
         })
         .then((result) => {
             if (result.isConfirmed) {
-                 fetch(`http://localhost:5000/equipments/${id}`,{
+                 fetch(`https://all-set-sports-server.vercel.app/equipments/${id}`,{
                     method:'DELETE'
                  })
                  .then(()=>{

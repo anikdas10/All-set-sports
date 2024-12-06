@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
     const toggleTheme = () =>{
         setTheme(!theme)
     }
-    console.log(theme);
+    
     const createUser = (email,password)=>{
         setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
