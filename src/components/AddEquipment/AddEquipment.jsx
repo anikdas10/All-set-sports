@@ -94,7 +94,7 @@ const AddEquipment = () => {
                         <div className="label">
                             <span className="label-text">Price</span>
                         </div>
-                        <input type="text" placeholder="Enter Price" 
+                        <input type="number" placeholder="Enter Price" 
                         name="price"
                         className="input input-bordered w-full " />
  

@@ -64,7 +64,7 @@ const MyEquipment = () => {
                                 <h2 className="font-semibold text-sm md:text-lg lg:text-2xl">{equipment.itemName}</h2>
                                 <p className=" md:text-lg hidden lg:block "><span className="font-bold">Description:</span>{equipment.description}</p>
                                 <p className="text-xs md:text-lg"><span className="font-semibold">Customization</span>:{equipment.customization}</p>
-                                <p className="text-xs md:text-lg"><span className="font-semibold">Price</span>:{equipment.price}</p>
+                                <p className="text-xs md:text-lg"><span className="font-semibold">Price</span>:{equipment.price} $</p>
                                 <p className="text-xs md:text-sm lg:text-lg"><span className="font-semibold">Rating:</span>{equipment.rating}</p>
                                 
                                </div>

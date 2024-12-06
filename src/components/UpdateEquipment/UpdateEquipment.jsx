@@ -14,7 +14,7 @@ const UpdateEquipment = () => {
         const itemName= form.itemName.value;
         const category= form.category.value;
         const description= form.description.value;
-        const price= form.price.value;
+        const price= parseFloat(form.price.value);
         const rating= form.rating.value;
         const customization= form.customization.value;
         const delivery= form.delivery.value;

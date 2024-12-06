@@ -12,7 +12,7 @@ const Details = () => {
     <img
       src={loadedEquipment.image}
       alt={loadedEquipment.item_name}
-      className="rounded-t-lg w-3/5 mx-auto object-cover "
+      className="rounded-t-lg w-full  object-cover "
     />
     <h3 className="text-xl font-bold mt-4">{loadedEquipment.itemName}</h3>
     <p className="text-gray-500 text-sm mt-1 md:text-lg">
@@ -20,7 +20,7 @@ const Details = () => {
     </p>
     <p className="text-gray-700 mt-4">{loadedEquipment.description}</p>
     <p className="mt-4 text-lg font-semibold text-green-600">
-      Price: {loadedEquipment.price}
+      Price: {loadedEquipment.price} $
     </p>
     <p className="mt-2">
       <strong>Rating:</strong> {loadedEquipment.rating}
