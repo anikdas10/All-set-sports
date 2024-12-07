@@ -1,8 +1,17 @@
-# React + Vite
+Website name: AllSet Sports.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Key Feature of this Website
 
-Currently, two official plugins are available:
+1. Author can add an product with meaningful element.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Author can  Update or delete any product .
+
+3. Any user can login in the website using both email and password or gmail.
+
+4.After adding the product by the login user , he can only see his product .
+
+5. There are several private route.So if user don't have login, then user can not access this several private route.
+
+
+
+Website url:  https://allset-sports.web.app
