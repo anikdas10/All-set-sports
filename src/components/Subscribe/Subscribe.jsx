@@ -6,7 +6,7 @@ const Subscribe = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const emailCollection = {email}
-        fetch('http://localhost:5000/subscribe',{
+        fetch('https://all-set-sports-server.vercel.app/subscribe',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
