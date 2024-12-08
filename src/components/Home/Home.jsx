@@ -6,6 +6,7 @@ import Products from "../Navbar/Product/Products";
 import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 import Brand from "../BrandPartner/Brand";
+import Subscribe from "../Subscribe/Subscribe";
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
             <section>
                 <Brand/>
             </section>
+            <Subscribe></Subscribe>
         </div>
        </div>
     );

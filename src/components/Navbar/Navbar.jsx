@@ -25,6 +25,8 @@ const Navbar = () => {
         })
     }
   
+    console.log(user?.photoURL);
+
     return (
         <div className='bg-[#0A1828] fixed w-full top-0 left-0 z-50 py-2 border-b'>
           <nav className='container flex items-center justify-between relative'>
