@@ -1,17 +1,78 @@
-Website name: AllSet Sports.
-
-Key Feature of this Website
-
-1. Author can add an product with meaningful element.
-
-2. Author can  Update or delete any product .
-
-3. Any user can login in the website using both email and password or gmail.
-
-4.After adding the product by the login user , he can only see his product .
-
-5. There are several private route.So if user don't have login, then user can not access this several private route.
 
 
 
-Website url:  https://allset-sports.web.app
+🚀 **Parcel.Go** is a modern web application built with **React** and **Vite**, designed to streamline package tracking and delivery management. It integrates **Leaflet** for interactive maps, **Node Js** for backend services, and **Stripe** for secure payments.
+
+## 📸 Screenshot
+*(Add a screenshot here if available)*
+
+## 🛠️ Technologies Used
+- **Frontend**: React, Vite, Tailwind CSS
+- **State Management**: React Hook Form, React Query
+- **Routing**: React Router DOM
+- **Mapping**: Leaflet, React Leaflet
+- **Backend & Storage**: Firebase, LocalForage
+- **Payments**: Stripe API
+- **Charts & Data Visualization**: ApexCharts, React ApexCharts
+- **UI Components**: Radix UI, Lucide React, React Icons
+- **Notifications & Alerts**: React Notifications, SweetAlert2
+
+## ✨ Features
+- 📍 **Real-time Package Tracking** – View your package location on an interactive map.
+- 🔔 **Instant Notifications** – Get alerts for package status updates.
+- 💳 **Secure Payments** – Process transactions using Stripe.
+- 📊 **Data Visualization** – Track shipments with charts.
+- 🎉 **UI Enhancements** – Modern animations and UI components.
+- 🌐 **Fast & Optimized** – Powered by Vite for better performance.
+
+## 📦 Dependencies
+This project uses the following main dependencies:
+
+```json
+"dependencies": {
+  "@stripe/react-stripe-js": "^3.1.1",
+  "firebase": "^11.1.0",
+  "leaflet": "^1.9.4",
+  "react": "^19.0.0-rc.1",
+  "react-leaflet": "^5.0.0",
+  "react-router-dom": "^7.1.1",
+  "tailwindcss": "^3.4.17",
+  "vite": "^6.0.5"
+}
+```
+
+## 🚀 Installation & Setup
+Follow these steps to run the project locally:
+
+### 1️⃣ Prerequisites
+Ensure you have **Node.js** and **npm** installed.
+
+### 2️⃣ Clone the Repository
+```sh
+git clone https://github.com/your-username/parcel-go.git
+cd parcel-go
+```
+
+### 3️⃣ Install Dependencies
+```sh
+npm install
+```
+
+### 4️⃣ Start the Development Server
+```sh
+npm run dev
+```
+The app will be available at `http://localhost:5173`.
+
+### 5️⃣ Build for Production
+```sh
+npm run build
+```
+
+### 6️⃣ Preview Production Build
+```sh
+npm run preview
+```
+
+## 🌍 Live Demo
+[*(Add the live link here if available)*](https://allset-sports.web.app)
