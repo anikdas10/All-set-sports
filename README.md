@@ -49,7 +49,7 @@ Ensure you have **Node.js** and **npm** installed.
 
 ### 2️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-username/parcel-go.git
+git clone https://github.com/anikdas10/All-set-sports.git
 cd parcel-go
 ```
 
@@ -75,4 +75,4 @@ npm run preview
 ```
 
 ## 🌍 Live Demo
-[*(Add the live link here if available)*](https://allset-sports.web.app)
+[*[https://allset-sports.web.app)*]
