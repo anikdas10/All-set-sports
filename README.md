@@ -3,8 +3,6 @@
 
 🚀 **Parcel.Go** is a modern web application built with **React** and **Vite**, designed to streamline package tracking and delivery management. It integrates **Leaflet** for interactive maps, **Node Js** for backend services, and **Stripe** for secure payments.
 
-## 📸 Screenshot
-*(Add a screenshot here if available)*
 
 ## 🛠️ Technologies Used
 - **Frontend**: React, Vite, Tailwind CSS
