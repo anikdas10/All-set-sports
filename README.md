@@ -1,7 +1,11 @@
 
 
 
-🚀 **Parcel.Go** is a modern web application built with **React** and **Vite**, designed to streamline package tracking and delivery management. It integrates **Leaflet** for interactive maps, **Node Js** for backend services, and **Stripe** for secure payments.
+All Set Sports is your go-to online store for premium sports equipment and gear. Whether you're a professional athlete or a recreational enthusiast, we offer a wide range of high-quality products for all your sporting needs. From footballs to tennis rackets, and gym equipment to outdoor gear, we ensure that every item we sell is built to last and enhance your performance.
+
+Our mission is to make sports accessible to everyone, helping you stay active, healthy, and ready for any challenge. With a seamless shopping experience, secure payment methods, and fast shipping, we make sure you're always all set for your next game.
+
+Explore our collection today and gear up for success!
 
 
 ## 🛠️ Technologies Used
@@ -10,7 +14,6 @@
 - **Routing**: React Router DOM
 - **Mapping**: Leaflet, React Leaflet
 - **Backend & Storage**: Firebase, LocalForage
-- **Payments**: Stripe API
 - **Charts & Data Visualization**: ApexCharts, React ApexCharts
 - **UI Components**: Radix UI, Lucide React, React Icons
 - **Notifications & Alerts**: React Notifications, SweetAlert2
